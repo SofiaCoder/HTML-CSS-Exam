@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happenings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="add-page">
+    <header>
+        <h1>Add your event!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/allEvents.html">All events</a></li>
+            <li><a href="/addEvents.html">Add event</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </nav>
+    <section class="add">
+        <form class="add-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Name"><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date"><br>
+            <label for="description">Short description</label>
+            <input type="textarea" id="description" placeholder="Short description of the event..."><br>
+            <label for="agenda">Agenda</label>
+            <input type="textarea" id="agenda" placeholder="The events agenda..."><br>
+            <div id="photos-div">
+            <label type="photos">Photos</label>
+            <input type="file" class="photos" accept="image/*">
+            <input type="file" class="photos" accept="image/*">
+            <input type="file" class="photos" accept="image/*">
+            <input type="file" class="photos" accept="image/*"><br>
+            </div>
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="pleasure">Pleasure</option>
+                <option value="education">Education</option>
+                <option value="afterwork">Afterwork</option>
+            </select><br>
+            <input type="submit" id="submit" value="Add event">
+            
+        </form>
+    </section>
+    </main>
+ </body>
+ </html>
