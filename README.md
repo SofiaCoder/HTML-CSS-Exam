@@ -26,7 +26,7 @@ För stock photos kan man använda sig utav [unsplash.com](http://unsplash.com)
         - Länk till detaljsida
         
 
-![Webb21 - JS2 - Individuellinlämningsuppgift.001.jpeg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f90e911e-29df-49a7-9818-4ae5096a359c/Webb21_-_JS2_-_Individuellinlamningsuppgift.001.jpeg)
+ 
 
 - Event List Page: En sida som listar event.
     - Rubrik

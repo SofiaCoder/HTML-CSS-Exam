@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class="about-page">
-        <header>
+        <header id="about-header">
             <h1>About happenings event</h1>
         </header>
         <nav>
@@ -27,24 +27,30 @@
             <p>Info om teamet</p>
             <h2>VDn</h2>
             <p>Info från VDn</p>
-             <div>
-                <img src="" alt="Vår VD">
-                <span>VD</span>
-                <a href=”0046707683114”>0707683114</a>
-                <a href="mailto:sofia.laas@gmail.com">sofia.laas@gmail.com</a>.
+             <div class="vd">
+                <img src="/img/vd1.jpg" alt="Vår VD">
+                <div class="vd-text">
+                    <span>VD</span><br>
+                    <a href=”0046707683114”>0707683114</a><br>
+                    <a href="mailto:sofia.laas@gmail.com">sofia.laas@gmail.com</a>
+                </div>
+            </div>
+            <div class="team">
+                <img src="/img/team.jpg" alt="Vårt team">
             </div>
             <div>
-                <img src="" alt="Vårt team">
-            </div>
-            <form>
-                <label for="contact-name">Name:</label>
-                <input type="text" id="contact-name" placeholder="Name">
-                <label for="contact-mail">Mailaddres:</label>
-                <input type="text" id="contact-mail" placeholder="mail@mail.com">
-                <label for="contact-message">Message:</label>
-                <input type="textarea" id="contact-message">
-                <input type="submit" id="contact-submit" value="Send">
+            <form id="contact">
+                    <label id="contact-name-label" for="contact-name">Name:</label>
+                    <label id="contact-mail-label" for="contact-mail">Mailaddres:</label>
+                    <label id="contact-message-label" for="contact-message">Message:</label>
+
+                    <input type="text" id="contact-name" placeholder="Name"><br>
+                    <input type="text" id="contact-mail" placeholder="mail@mail.com"><br>
+                    <input type="textarea" id="contact-message"><br>
+                    <input type="submit" id="contact-submit" value="Send">
+
             </form>
+            </div>
 
         </section>
 

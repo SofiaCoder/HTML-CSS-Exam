@@ -198,8 +198,7 @@ ADD EVENT
     }
 
     & .photos {
-        max-width: 5rem;
-        text-overflow: hidden;
+        max-width: 3.5rem;
     }
 
 }
@@ -219,8 +218,82 @@ ABOUT
         "... header"
         "nav about"
         "... about"; 
+
+    & #about-header {
+        font-size: 40px;
+        // margin-left: none !important;
+        // text-align: left !important;
+    }
 }
 
 .about {
     grid-area: about;
+    margin-left: 5rem;
+
+   & .vd {
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        grid-template-areas:
+            "image text";
+
+        & img {
+            grid-area: image;
+            max-width: 10rem;
+            margin-bottom: 1rem;
+        }
+
+        &-text {
+            grid-area: text;
+        }
+    }
+
+    & .team img {
+        max-width: 50rem;
+    }
+
+    & #contact {
+        background-color: #fdc6d0;
+        max-width: 46rem;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: 1fr 1fr 1.8fr 1fr;
+        grid-template-areas: 
+            "labelName inputName"
+            "labelMail inputMail"
+            "labelMsg inputMsg"
+            "........ submit";
+
+        &-name-label {
+            grid-area: labelName;
+        }
+        &-mail-label {
+            grid-area: labelMail;
+        }
+        &-message-label {
+            grid-area: labelMsg;
+        }
+        &-name {
+            grid-area: inputName;
+            height: 1.8rem;
+            margin-right: 15rem;
+        }
+        &-mail {
+            grid-area: inputMail;
+            height: 1.8rem;
+            margin-right: 15rem;
+        }
+        &-message {
+            grid-area: inputMsg;
+            height: 5rem;
+            margin-right: 15rem;
+        }
+        &-submit {
+            grid-area: submit;
+            background-color: #ff9daf;
+            height: 3rem;
+            margin-right: 15rem;
+        }
+
+    }
 }
