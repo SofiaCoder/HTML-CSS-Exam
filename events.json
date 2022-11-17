@@ -6,6 +6,7 @@
             "name": "The Woman in Black",
             "image": "./img/abstract.jpg",
             "alt": "ALT text",
+            "date": "2022-12-01",
             "desc": "Kort beskrivning 1",
             "category": "Kategori",
             "info": "Longer text info"
@@ -16,6 +17,7 @@
             "image": "./img/abstract.jpg",
             "alt": "ALT text",
             "desc": "Kort beskrivning 2",
+            "date": "2022-12-01",
             "category": "Kategori",
             "info": "Longer text info"
         },
@@ -25,6 +27,7 @@
             "image": "./img/abstract.jpg",
             "alt": "ALT text",
             "desc": "Kort beskrivning 3",
+            "date": "2022-12-01",
             "category": "Kategori",
             "info": "Longer text info"
         }        

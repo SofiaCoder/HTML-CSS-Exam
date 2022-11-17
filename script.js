@@ -20,11 +20,13 @@ function infoFunction (event) {
 
 function toggle(elem) {
     var x = elem.nextElementSibling;
-    console.log(x.style.display);
     if (x.style.display == "block") {
       x.style.display = "none";
+      elem.innerText = "More info";
     } else {
       x.style.display = "block";
+      elem.innerText = "Hide info";
+
     }
   }
 
@@ -35,10 +37,12 @@ $(function() {
     $.getJSON('events.json', function(data) {
         $.each(data.events, function(i, f) {
            var tblRow = "<div id='event-"+f.id + "' class='event-card'>" + 
-           "<img alt='" + f.alt + "' class='img' src='" + f.image + "' />" + 
+           "<img alt='" + f.alt + "' src='" + f.image + "' />" + 
            "<h2 class='name'>" + f.name + "</h2>" +
+           "<span class='date'>" + f.date + "</span>" +
            "<span class='desc'>" + f.desc + "</span>" +
-           "<span class='vategory'>" + f.category + "</span>" +
+           "<span class='category'>" + f.category + "</span>" +
+           "<a href='./event.html' >Till eventet</a>" +
            "<button onclick='toggle(this);'>More info</button>" +
            "<span class='info'>" + f.info + "</span>" +
            "</div>";
