@@ -1,0 +1,32 @@
+
+{
+    "events": [
+        {
+            "id": "1",
+            "name": "The Woman in Black",
+            "image": "./img/abstract.jpg",
+            "alt": "ALT text",
+            "desc": "Kort beskrivning 1",
+            "category": "Kategori",
+            "info": "Longer text info"
+        },
+        {
+            "id": "2",
+            "name": "The Woman in Red",
+            "image": "./img/abstract.jpg",
+            "alt": "ALT text",
+            "desc": "Kort beskrivning 2",
+            "category": "Kategori",
+            "info": "Longer text info"
+        },
+        {
+            "id": "3",
+            "name": "The Woman in Purple",
+            "image": "./img/abstract.jpg",
+            "alt": "ALT text",
+            "desc": "Kort beskrivning 3",
+            "category": "Kategori",
+            "info": "Longer text info"
+        }        
+    ]
+} 
