@@ -60,7 +60,6 @@ HOME
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
-  padding-left: 10px;
 }
 .event-card:hover {
   background-color: #fdc6d0;
@@ -69,7 +68,7 @@ HOME
   margin-top: 10px;
 }
 .event-card span {
-
+  margin-left: 10px;
 }
 .event-card img {
   max-width: 100%;
@@ -86,14 +85,14 @@ HOME
 .event-card button:hover {
   background-color: #ff9daf;
 }
-.event-card .info {
+.event-card #info1 {
   display: none;
 }
 .event-card a {
   text-decoration: none;
 }
 .event-card a:visited, .event-card a :link {
-  color: #7acdd7;
+  color: black;
 }
 .event-card a:hover {
   color: grey;
