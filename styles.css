@@ -1,10 +1,16 @@
 body {
   background-color: rgb(250, 229, 233);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
 }
 
 header {
   grid-area: header;
-  margin: auto;
+  font-size: 38px;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
@@ -21,8 +27,15 @@ nav ul li {
   padding: 1rem;
   background-color: hotpink;
 }
+nav ul li:hover {
+  background-color: #ff9daf;
+}
 nav ul li a {
   text-decoration: none;
+}
+
+section {
+  margin-inline: auto;
 }
 
 /*
@@ -64,8 +77,8 @@ HOME
 .event-card:hover {
   background-color: #fdc6d0;
 }
-.event-card :nth-child(2) {
-  margin-top: 10px;
+.event-card > * {
+  margin-bottom: 10px;
 }
 .event-card span {
   margin-left: 10px;
@@ -123,6 +136,39 @@ ALL EVENTS
 
 /*
 =================================================================
+EVENT X
+=================================================================
+*/
+.event-x-page {
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: 10rem 1fr;
+  grid-template-areas: "... header" "nav eventX" "... eventX";
+}
+
+.event-x {
+  grid-area: eventX;
+}
+.event-x-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.event-x-text > * {
+  margin-bottom: 1rem;
+  font-size: large;
+  font-weight: 800;
+}
+.event-x-pics {
+  display: flex;
+}
+.event-x-pics img {
+  max-width: 200px;
+}
+
+/*
+=================================================================
 ADD EVENT
 =================================================================
 */
@@ -140,9 +186,7 @@ ADD EVENT
 
 .add-form {
   background-color: #fdc6d0;
-  max-width: 70%;
-  padding: 3rem;
-  margin-left: 5rem;
+  padding: 5rem;
 }
 .add-form input:not(:last-child),
 .add-form select {
@@ -150,11 +194,15 @@ ADD EVENT
   margin-left: 3rem;
   width: 15rem;
 }
+.add-form #description:placeholder {
+  vertical-align: top;
+}
 .add-form label {
   display: inline-block;
   text-align: left;
   width: 8rem;
   vertical-align: top;
+  font-weight: 800;
 }
 .add-form #description {
   height: 5rem;
@@ -187,7 +235,6 @@ ABOUT
 
 .about {
   grid-area: about;
-  margin-left: 5rem;
 }
 .about .vd {
   display: grid;
@@ -201,6 +248,12 @@ ABOUT
 }
 .about .vd-text {
   grid-area: text;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.about .vd-text a {
+  margin-top: 0.4rem;
 }
 .about .team img {
   max-width: 50rem;

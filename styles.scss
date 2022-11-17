@@ -1,10 +1,17 @@
 body {
     background-color: rgb(250, 229, 233);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
 }
 
 header { 
     grid-area: header;
-    margin: auto;
+    font-size: 38px;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 nav { 
@@ -20,12 +27,19 @@ nav {
             border: solid 1px #f9d7dd;
             padding: 1rem;
             background-color: hotpink;
+            &:hover {
+                background-color:#ff9daf;
+            }
             
             & a {
                 text-decoration: none;
             }
         }
     }
+}
+
+section {
+    margin-inline: auto;
 }
 
 /*
@@ -72,12 +86,13 @@ HOME
             background-color: #fdc6d0;
         }
 
-        & :nth-child(2) {
-            margin-top: 10px;
+        & > * {
+            margin-bottom: 10px;
         }
+
         
         & span {
-            margin-left: 10px;;
+            margin-left: 10px;
         }
 
         & img {
@@ -144,6 +159,47 @@ ALL EVENTS
     margin-left: auto;
     margin-right: auto;
 }
+/*
+=================================================================
+EVENT X
+=================================================================
+*/
+
+.event-x-page {
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: 10rem 1fr;
+    grid-template-areas: 
+        "... header"
+        "nav eventX"
+        "... eventX"; 
+}
+
+.event-x {
+    grid-area: eventX;
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        & > * {
+            margin-bottom: 1rem;
+            font-size: large;
+            font-weight: 800;
+        }
+    }
+
+    &-pics {
+        display: flex;
+
+        & img {
+            max-width: 200px;
+        }
+    }
+}
+
+
 
 /*
 =================================================================
@@ -167,15 +223,17 @@ ADD EVENT
 }
 .add-form {
     background-color: #fdc6d0;
-    max-width: 70%;
-    padding: 3rem;
-    margin-left: 5rem;
+    padding: 5rem;
 
     & input:not(:last-child), 
     select {
         margin-bottom: 3rem;
         margin-left: 3rem;
-        width: 15rem;
+        width: 15rem; 
+    }
+
+    & #description:placeholder {
+        vertical-align: top;
     }
 
     & label {
@@ -183,6 +241,7 @@ ADD EVENT
         text-align: left;
         width: 8rem;
         vertical-align: top;
+        font-weight: 800;
     }
 
     & #description {
@@ -221,14 +280,11 @@ ABOUT
 
     & #about-header {
         font-size: 40px;
-        // margin-left: none !important;
-        // text-align: left !important;
     }
 }
 
 .about {
     grid-area: about;
-    margin-left: 5rem;
 
    & .vd {
         display: grid;
@@ -244,6 +300,12 @@ ABOUT
 
         &-text {
             grid-area: text;
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            & a {
+                margin-top: 0.4rem;
+            }
         }
     }
 
