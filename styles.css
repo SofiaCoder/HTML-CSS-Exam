@@ -98,7 +98,7 @@ HOME
 .event-card button:hover {
   background-color: #ff9daf;
 }
-.event-card #info1 {
+.event-card #info1, .event-card #hideBtn {
   display: none;
 }
 .event-card a {
