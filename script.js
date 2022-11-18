@@ -16,3 +16,15 @@ function infoFunction (event) {
 }
 
 infoBtn1.addEventListener('click', infoFunction);
+
+function toggle(elem) {
+    var x = elem.nextElementSibling;
+    if (x.style.display == "block") {
+      x.style.display = "none";
+      elem.innerText = "More info";
+    } else {
+      x.style.display = "block";
+      elem.innerText = "Hide info";
+
+    }
+  }
