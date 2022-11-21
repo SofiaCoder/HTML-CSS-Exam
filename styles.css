@@ -86,8 +86,7 @@ HOME
 .event-card img {
   width: 100%;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   align-self: center;
 }
 .event-card-text {
@@ -98,8 +97,7 @@ HOME
 }
 .event-card-text-name {
   font-size: larger;
-  -webkit-text-decoration: underline grey;
-          text-decoration: underline grey;
+  text-decoration: underline grey;
 }
 .event-card-text .info {
   display: none;
@@ -204,8 +202,7 @@ EVENT X
 .event-x-pics img {
   max-width: 200px;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 5px;
   transition: transform 0.5s;
   margin-bottom: 10rem;
@@ -232,37 +229,73 @@ ADD EVENT
 }
 
 .add-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
   background-color: #fdc6d0;
   padding: 5rem;
+  grid-template-areas: "nameLabel nameInput" "dateLabel dateInput" "descriptLabel descriptInput" "agendaLabel agendaInput" "photosLabel photosDiv" "categoryLabel categoryInput" "submit submit";
 }
-.add-form input:not(:last-child),
+.add-form input,
 .add-form select {
-  margin: 0.5rem 10rem;
-  width: 15rem;
+  margin: 0.5rem 1rem 0 0;
 }
 .add-form label {
   text-align: left;
-  width: 8rem;
+  width: 10rem;
   font-weight: 800;
 }
+.add-form #name-label {
+  grid-area: nameLabel;
+}
+.add-form #name {
+  grid-area: nameInput;
+  height: 1.5rem;
+}
+.add-form #date-label {
+  grid-area: dateLabel;
+}
+.add-form #date {
+  grid-area: dateInput;
+  height: 1.5rem;
+}
+.add-form #description-label {
+  grid-area: descriptLabel;
+}
 .add-form #description {
+  grid-area: descriptInput;
   height: 5rem;
+}
+.add-form #agenda-label {
+  grid-area: agendaLabel;
 }
 .add-form #agenda {
+  grid-area: agendaInput;
   height: 5rem;
 }
+.add-form #photos-label {
+  grid-area: photosLabel;
+}
 .add-form #photos-div {
+  grid-area: photosDiv;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   max-width: 40rem;
 }
-.add-form :last-child {
+.add-form #category-label {
+  grid-area: categoryLabel;
+}
+.add-form #category {
+  grid-area: categoryInput;
+  height: 1.5rem;
+}
+.add-form #submit {
+  grid-area: submit;
   width: 8rem;
   align-self: center;
   background-color: #ff9daf;
   height: 3rem;
+  margin-inline: auto;
 }
 
 /*
@@ -276,9 +309,6 @@ ABOUT
   grid-template-columns: 10rem 1fr;
   grid-template-rows: 10rem 1fr;
   grid-template-areas: "... header" "nav about" "... about";
-}
-.about-page #about-header {
-  font-size: 40px;
 }
 
 .about {
@@ -367,4 +397,6 @@ ABOUT
   height: 13rem;
   width: 20rem;
   align-self: center;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -270,48 +270,96 @@ ADD EVENT
     grid-area: add;
 }
 .add-form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
     background-color: #fdc6d0;
     padding: 5rem;
+    grid-template-areas: 
+        "nameLabel nameInput"
+        "dateLabel dateInput"
+        "descriptLabel descriptInput"
+        "agendaLabel agendaInput"
+        "photosLabel photosDiv"
+        "categoryLabel categoryInput"
+        "submit submit";
 
-    & input:not(:last-child), 
-    select {
-        margin: 0.5rem 10rem;
-        width: 15rem; 
+
+    & input, 
+    select { 
+        margin: 0.5rem 1rem 0 0;
     }
 
-    // & #description:placeholder {
-    // }
-
     & label {
-        
         text-align: left;
-        width: 8rem;
+        width: 10rem;
         font-weight: 800;
     }
 
+    & #name-label {
+        grid-area: nameLabel;
+    }
+
+    & #name {
+        grid-area: nameInput;
+        height: 1.5rem;
+    }
+
+    & #date-label {
+        grid-area: dateLabel;
+    }
+
+    & #date {
+        grid-area: dateInput;
+        height: 1.5rem;
+    }
+
+    & #description-label {
+        grid-area: descriptLabel;
+    }
+
     & #description {
+        grid-area: descriptInput;
         height: 5rem;
+    }
+
+    & #agenda-label {
+        grid-area: agendaLabel;
     }
 
     & #agenda {
+        grid-area: agendaInput;
         height: 5rem;
     }
 
+    & #photos-label {
+        grid-area: photosLabel;
+    }
+
     & #photos-div {
+        grid-area: photosDiv;
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
         max-width: 40rem;
     }
 
-    & :last-child {
+    & #category-label {
+        grid-area: categoryLabel;
+    }
+
+    & #category {
+        grid-area: categoryInput;
+        height: 1.5rem;
+    }
+
+    & #submit {
+        grid-area: submit;
         width: 8rem;
         align-self: center;
         background-color: #ff9daf;
         height: 3rem;
+        margin-inline: auto;
     }
-
 }
 
 /*
@@ -329,10 +377,6 @@ ABOUT
         "... header"
         "nav about"
         "... about"; 
-
-    & #about-header {
-        font-size: 40px;
-    }
 }
 
 .about {
