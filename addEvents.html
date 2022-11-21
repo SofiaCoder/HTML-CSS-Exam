@@ -26,29 +26,32 @@
     <section class="add">
         <h2>Here you can add your own event</h2>
         <form class="add-form">
+            <div>
             <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Name"><br>
+            <input type="text" id="name" placeholder="Name">
+            </div>
             <label for="date">Date:</label>
-            <input type="date" id="date"><br>
+            <input type="date" id="date">
             <label for="description">Short description</label>
-            <input type="textarea" id="description" placeholder="Short description of the event..."><br>
+            <input type="textarea" id="description" placeholder="Short description of the event...">
             <label for="agenda">Agenda</label>
-            <input type="textarea" id="agenda" placeholder="The events agenda..."><br>
-            <div id="photos-div">
+            <input type="textarea" id="agenda" placeholder="The events agenda...">
             <label type="photos">Photos</label>
+            <div id="photos-div"></div>
             <input type="file" class="photos" accept="image/*">
             <input type="file" class="photos" accept="image/*">
             <input type="file" class="photos" accept="image/*">
-            <input type="file" class="photos" accept="image/*"><br>
+            <input type="file" class="photos" accept="image/*">
             </div>
             <label for="category">Category:</label>
             <select id="category">
-                <option value="pleasure">Pleasure</option>
+                <option value="fun">Fun</option>
                 <option value="education">Education</option>
-                <option value="afterwork">Afterwork</option>
+                <option value="workout">Workout</option>
+                <option value="relax">Relax</option>
+                <option value="food">Food</option>
             </select><br>
             <input type="submit" id="submit" value="Add event">
-            
         </form>
     </section>
     </main>

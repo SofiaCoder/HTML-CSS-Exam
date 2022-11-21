@@ -1,7 +1,8 @@
 body {
-  background-color: rgb(250, 229, 233);
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 700;
+  background-color: #fae5e9;
+  color: rgb(110, 110, 110);
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
 }
 
 header {
@@ -13,22 +14,27 @@ header {
   align-items: center;
 }
 
+h1, h2 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
 nav {
   grid-area: nav;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
 }
 nav ul {
-  max-width: 7rem;
+  width: 10rem;
   list-style-type: none;
   display: block;
-  justify-items: center;
 }
 nav ul li {
-  border: solid 1px #f9d7dd;
+  border-bottom: solid 1px #f9d7dd;
   padding: 1rem;
-  background-color: hotpink;
+  background-image: linear-gradient(to right, hotpink, #ff9daf, #fae5e9);
 }
 nav ul li:hover {
-  background-color: #ff9daf;
+  background-image: linear-gradient(to right, #ff9daf, #fae5e9);
 }
 nav ul li a {
   text-decoration: none;
@@ -47,7 +53,7 @@ HOME
   max-width: 1300px;
   display: grid;
   grid-template-columns: 10rem 1fr;
-  grid-template-rows: 8rem 1fr 1.5fr;
+  grid-template-rows: 8rem 1fr 1.6fr;
   text-align: center;
   grid-template-areas: "... header" "nav home" "... event";
 }
@@ -77,38 +83,49 @@ HOME
 .event-card:hover {
   background-color: #fdc6d0;
 }
-.event-card > * {
-  margin-bottom: 10px;
-}
-.event-card span {
-  margin-left: 10px;
-}
 .event-card img {
-  max-width: 100%;
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
   align-self: center;
 }
-.event-card button {
+.event-card-text {
+  margin-inline: 10px;
+}
+.event-card-text > * {
+  margin-bottom: 5px;
+}
+.event-card-text-name {
+  font-size: larger;
+  -webkit-text-decoration: underline grey;
+          text-decoration: underline grey;
+}
+.event-card-text .info {
+  display: none;
+}
+.event-card-text button {
   max-width: 100px;
   background-color: #f9d7dd;
   border: 1px solid #ff9daf;
-  margin-top: 3px;
+  margin-top: 8px;
   margin-bottom: 3px;
   transition-duration: 0.4s;
-}
-.event-card button:hover {
-  background-color: #ff9daf;
-}
-.event-card .info1 {
-  display: none;
-}
-.event-card a {
-  text-decoration: none;
-}
-.event-card a:visited, .event-card a :link {
+  font-family: "Nunito", sans-serif;
   color: black;
 }
-.event-card a:hover {
-  color: grey;
+.event-card-text button:hover {
+  background-color: #ff9daf;
+}
+.event-card-text a {
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.event-card-text a:visited, .event-card-text a :link {
+  color: rgb(82, 82, 82);
+}
+.event-card-text a:hover {
+  color: rgb(142, 138, 138);
 }
 
 /*
@@ -153,18 +170,48 @@ EVENT X
 .event-x-text {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  max-width: 25rem;
 }
-.event-x-text > * {
-  margin-bottom: 1rem;
+.event-x-text p {
+  margin: 0.5rem;
+  padding: 5px;
   font-size: large;
   font-weight: 800;
+}
+.event-x-text img {
+  width: 150px;
+  border-radius: 10%;
+}
+.event-x-text .info {
+  font-style: italic;
+}
+.event-x-text button {
+  max-width: 30rem;
+  background-color: #f9d7dd;
+  border: 1px solid #ff9daf;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  transition-duration: 0.4s;
+  font-family: "Nunito", sans-serif;
+  color: black;
+}
+.event-x-text button:hover {
+  background-color: #ff9daf;
 }
 .event-x-pics {
   display: flex;
 }
 .event-x-pics img {
   max-width: 200px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 5px;
+  transition: transform 0.5s;
+  margin-bottom: 10rem;
+}
+.event-x-pics img:hover {
+  transform: scale(1.5);
 }
 
 /*
@@ -185,23 +232,19 @@ ADD EVENT
 }
 
 .add-form {
+  display: flex;
+  flex-direction: column;
   background-color: #fdc6d0;
   padding: 5rem;
 }
 .add-form input:not(:last-child),
 .add-form select {
-  margin-bottom: 3rem;
-  margin-left: 3rem;
+  margin: 0.5rem 10rem;
   width: 15rem;
 }
-.add-form #description:placeholder {
-  vertical-align: top;
-}
 .add-form label {
-  display: inline-block;
   text-align: left;
   width: 8rem;
-  vertical-align: top;
   font-weight: 800;
 }
 .add-form #description {
@@ -212,9 +255,14 @@ ADD EVENT
 }
 .add-form #photos-div {
   display: flex;
+  justify-content: space-evenly;
+  max-width: 40rem;
 }
-.add-form .photos {
-  max-width: 3.5rem;
+.add-form :last-child {
+  width: 8rem;
+  align-self: center;
+  background-color: #ff9daf;
+  height: 3rem;
 }
 
 /*
@@ -297,5 +345,26 @@ ABOUT
   height: 3rem;
   margin-right: 15rem;
 }
-
-/*# sourceMappingURL=styles.css.map */
+.about-form-answer {
+  background-color: #fdc6d0;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-form-answer p {
+  font-size: large;
+  background-color: #ff9daf;
+  align-self: center;
+  height: 5rem;
+  width: 15rem;
+  margin-top: 1rem;
+  border-radius: 3rem;
+  padding: 1rem;
+  text-align: center;
+}
+.about-form-answer img {
+  height: 13rem;
+  width: 20rem;
+  align-self: center;
+}/*# sourceMappingURL=styles.css.map */
