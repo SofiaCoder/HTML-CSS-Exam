@@ -9,8 +9,7 @@ let aboutForm = document.querySelector('#about-form');
 
 function infoFunction (event) {
     const text = event.target.nextElementSibling;
-    
-    if (text.style.display == 'none') {
+    if (window.getComputedStyle(text).display == 'none') {
     text.style.display = 'block';
     event.target.textContent = 'Hide info';
     } else {
