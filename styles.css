@@ -2,7 +2,7 @@ body {
   background-color: #fae5e9;
   color: rgb(110, 110, 110);
   font-family: "Nunito", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 header {
@@ -46,15 +46,14 @@ section {
 
 /*
 =================================================================
-HOME
+HOME (& event-cards for allEvents)
 =================================================================
 */
 .home {
   max-width: 1300px;
   display: grid;
-  grid-template-columns: 10rem 1fr;
-  grid-template-rows: 8rem 1fr 1.6fr;
-  text-align: center;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 3fr 5fr;
   grid-template-areas: "... header" "nav home" "... event";
 }
 
@@ -77,8 +76,6 @@ HOME
   background-color: #f9d7dd;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
 }
 .event-card:hover {
   background-color: #fdc6d0;
@@ -94,6 +91,9 @@ HOME
 }
 .event-card-text > * {
   margin-bottom: 5px;
+}
+.event-card-text span {
+  font-size: small;
 }
 .event-card-text-name {
   font-size: larger;
@@ -126,6 +126,14 @@ HOME
   color: rgb(142, 138, 138);
 }
 
+@media (max-width: 1000px) {
+  .home {
+    grid-template-rows: 0.2fr 1fr 3fr;
+  }
+  .event {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 /*
 ================================================================
 ALL EVENTS
@@ -134,8 +142,8 @@ ALL EVENTS
 .events-page {
   max-width: 1300px;
   display: grid;
-  grid-template-columns: 10rem 1fr;
-  grid-template-rows: 10rem 1fr;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 0.2fr 2fr;
   grid-template-areas: "... header" "nav events" "... events";
 }
 
@@ -145,8 +153,7 @@ ALL EVENTS
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 /*
@@ -157,13 +164,15 @@ EVENT X
 .event-x-page {
   max-width: 1300px;
   display: grid;
-  grid-template-columns: 10rem 1fr;
-  grid-template-rows: 10rem 1fr;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 0.2fr 1fr;
   grid-template-areas: "... header" "nav eventX" "... eventX";
 }
 
 .event-x {
   grid-area: eventX;
+  margin-bottom: 10rem;
+  margin-left: 8rem;
 }
 .event-x-text {
   display: flex;
@@ -174,38 +183,28 @@ EVENT X
   margin: 0.5rem;
   padding: 5px;
   font-size: large;
-  font-weight: 800;
+  font-weight: 500;
 }
 .event-x-text img {
   width: 150px;
   border-radius: 10%;
 }
+.event-x-text span {
+  font-size: small;
+}
 .event-x-text .info {
   font-style: italic;
 }
-.event-x-text button {
-  max-width: 30rem;
-  background-color: #f9d7dd;
-  border: 1px solid #ff9daf;
-  margin-top: 8px;
-  margin-bottom: 3px;
-  transition-duration: 0.4s;
-  font-family: "Nunito", sans-serif;
-  color: black;
-}
-.event-x-text button:hover {
-  background-color: #ff9daf;
-}
 .event-x-pics {
   display: flex;
+  flex-wrap: wrap;
 }
 .event-x-pics img {
-  max-width: 200px;
+  width: 150px;
   height: 150px;
   object-fit: cover;
   margin-right: 5px;
   transition: transform 0.5s;
-  margin-bottom: 10rem;
 }
 .event-x-pics img:hover {
   transform: scale(1.5);
@@ -219,8 +218,8 @@ ADD EVENT
 .add-page {
   max-width: 1300px;
   display: grid;
-  grid-template-columns: 10rem 1fr;
-  grid-template-rows: 10rem 1fr;
+  grid-template-columns: 0.2fr 2fr;
+  grid-template-rows: 0.2fr 1fr;
   grid-template-areas: "... header" "nav add" "... add";
 }
 
@@ -280,7 +279,6 @@ ADD EVENT
   grid-area: photosDiv;
   display: flex;
   flex-direction: column;
-  max-width: 40rem;
 }
 .add-form #category-label {
   grid-area: categoryLabel;
@@ -292,7 +290,6 @@ ADD EVENT
 .add-form #submit {
   grid-area: submit;
   width: 8rem;
-  align-self: center;
   background-color: #ff9daf;
   height: 3rem;
   margin-inline: auto;
@@ -306,8 +303,8 @@ ABOUT
 .about-page {
   max-width: 1300px;
   display: grid;
-  grid-template-columns: 10rem 1fr;
-  grid-template-rows: 10rem 1fr;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 0.2fr 2fr;
   grid-template-areas: "... header" "nav about" "... about";
 }
 

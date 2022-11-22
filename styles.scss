@@ -2,7 +2,7 @@ body {
     background-color: #fae5e9;
     color: rgb(110, 110, 110);
     font-family: 'Nunito', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 header { 
@@ -50,16 +50,15 @@ section {
 
 /*
 =================================================================
-HOME
+HOME (& event-cards for allEvents)
 =================================================================
 */
 
 .home {
     max-width: 1300px;
     display: grid;
-    grid-template-columns: 10rem 1fr;
-    grid-template-rows: 8rem 1fr 1.6fr;
-    text-align: center;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 3fr 5fr;
     grid-template-areas:
         "... header"
         "nav home"
@@ -85,8 +84,6 @@ HOME
         background-color: #f9d7dd;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        text-align: left;
 
         &:hover {
             background-color: #fdc6d0;
@@ -97,14 +94,15 @@ HOME
             object-fit: cover;
             align-self: center;
         }
-
         &-text {
             margin-inline: 10px;
 
             & > * {
                 margin-bottom: 5px;
             }
-
+            & span {
+                font-size: small;
+            }
             &-name {
                 font-size: larger;
                 text-decoration: underline grey;
@@ -125,10 +123,6 @@ HOME
                 &:hover {
                     background-color: #ff9daf;
                 }
-
-                // &:first-of-type + p{
-                //     display: none;
-                // }
             }
             & a {
                 text-decoration: none;
@@ -144,8 +138,15 @@ HOME
         }       
     }
 }
+@media (max-width: 1000px) {
+    .home {
+        grid-template-rows: 0.2fr 1fr 3fr;
+    }
+   .event {
+        grid-template-columns: 1fr 1fr;
 
-// @media (min-width: )
+   }
+}
 
 
 /*
@@ -157,8 +158,8 @@ ALL EVENTS
 .events-page {
     max-width: 1300px;
     display: grid;
-    grid-template-columns: 10rem 1fr;
-    grid-template-rows: 10rem 1fr;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 2fr;
     grid-template-areas: 
         "... header"
         "nav events"
@@ -171,8 +172,7 @@ ALL EVENTS
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 }
 /*
 =================================================================
@@ -183,8 +183,8 @@ EVENT X
 .event-x-page {
     max-width: 1300px;
     display: grid;
-    grid-template-columns: 10rem 1fr;
-    grid-template-rows: 10rem 1fr;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 1fr;
     grid-template-areas: 
         "... header"
         "nav eventX"
@@ -193,6 +193,8 @@ EVENT X
 
 .event-x {
     grid-area: eventX;
+    margin-bottom: 10rem;
+    margin-left: 8rem;
 
     &-text {
         display: flex;
@@ -202,52 +204,37 @@ EVENT X
             margin: 0.5rem;
             padding: 5px;
             font-size: large;
-            font-weight: 800;
+            font-weight: 500;
         }
         & img {
             width: 150px;
             border-radius: 10%;
         }
-
+        & span {
+            font-size: small;
+        }
         & .info {
             font-style: italic;
-        }
-        & button {
-            max-width: 30rem;
-            background-color: #f9d7dd;
-            border: 1px solid #ff9daf;
-            margin-top: 8px;
-            margin-bottom: 3px;
-            transition-duration: 0.4s;
-            font-family: 'Nunito', sans-serif;
-            color: black;
-
-            &:hover {
-                background-color: #ff9daf;
-            }
         }
     }
 
     &-pics {
         display: flex;
+        flex-wrap: wrap;
         
         & img {
-            max-width: 200px;
+            width: 150px;
             height: 150px;
             object-fit: cover;
             margin-right: 5px;
             transition: transform 0.5s;
-            margin-bottom: 10rem;
 
             &:hover {
                 transform: scale(1.5);
             }
-
         }
     }
 }
-
-
 
 /*
 =================================================================
@@ -258,14 +245,13 @@ ADD EVENT
 .add-page {
     max-width: 1300px;
     display: grid;
-    grid-template-columns: 10rem 1fr;
-    grid-template-rows: 10rem 1fr;
+    grid-template-columns: 0.2fr 2fr;
+    grid-template-rows: 0.2fr 1fr;
     grid-template-areas: 
         "... header"
         "nav add"
         "... add"; 
 }
-
 .add {
     grid-area: add;
 }
@@ -284,78 +270,61 @@ ADD EVENT
         "categoryLabel categoryInput"
         "submit submit";
 
-
     & input, 
     select { 
         margin: 0.5rem 1rem 0 0;
     }
-
     & label {
         text-align: left;
         width: 10rem;
         font-weight: 800;
     }
-
     & #name-label {
         grid-area: nameLabel;
     }
-
     & #name {
         grid-area: nameInput;
         height: 1.5rem;
     }
-
     & #date-label {
         grid-area: dateLabel;
     }
-
     & #date {
         grid-area: dateInput;
         height: 1.5rem;
     }
-
     & #description-label {
         grid-area: descriptLabel;
     }
-
     & #description {
         grid-area: descriptInput;
         height: 5rem;
     }
-
     & #agenda-label {
         grid-area: agendaLabel;
     }
-
     & #agenda {
         grid-area: agendaInput;
         height: 5rem;
     }
-
     & #photos-label {
         grid-area: photosLabel;
     }
-
     & #photos-div {
         grid-area: photosDiv;
         display: flex;
         flex-direction: column;
-        max-width: 40rem;
     }
-
     & #category-label {
         grid-area: categoryLabel;
     }
-
     & #category {
         grid-area: categoryInput;
         height: 1.5rem;
     }
-
     & #submit {
         grid-area: submit;
         width: 8rem;
-        align-self: center;
         background-color: #ff9daf;
         height: 3rem;
         margin-inline: auto;
@@ -371,8 +340,8 @@ ABOUT
 .about-page {
     max-width: 1300px;
     display: grid;
-    grid-template-columns: 10rem 1fr;
-    grid-template-rows: 10rem 1fr;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 2fr;
     grid-template-areas: 
         "... header"
         "nav about"

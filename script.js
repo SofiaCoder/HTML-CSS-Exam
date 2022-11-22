@@ -6,6 +6,7 @@ let aboutForm = document.querySelector('#about-form');
 // let style = info.style;
 
 
+
 function infoFunction (event) {
     const text = event.target.nextElementSibling;
     
@@ -13,7 +14,6 @@ function infoFunction (event) {
     text.style.display = 'block';
     event.target.textContent = 'Hide info';
     } else {
-        console.log(text.style);
         event.target.textContent = 'More info';
         text.style.display = 'none';
     }
