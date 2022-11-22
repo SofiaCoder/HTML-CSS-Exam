@@ -2,8 +2,7 @@ let infoBtns = document.querySelectorAll('.infoBtn');
 let homePage = document.querySelector('.home');
 let aboutSubmit = document.querySelector('#contact-submit');
 let aboutForm = document.querySelector('#about-form');
-// let info = document.querySelectorAll('.info');
-// let style = info.style;
+//const infoStyle = window.getComputedStyle(element, null);
 
 
 
@@ -19,18 +18,7 @@ function infoFunction (event) {
     }
 }
 
-// function infoToggle (event) {
-//     const text = event.target.nextElementSibling;
-    
-//     if (text.style.display == 'none') {
-//     text.style.display = 'block';
-//     event.target.textContent = 'Hide info';
-//     } else {
-//         console.log(text.style);
-//         event.target.textContent = 'More info';
-//         text.style.display = 'none';
-//     }
-// }
+
 
 infoBtns.forEach(btn => {
     btn.addEventListener('click', infoFunction);

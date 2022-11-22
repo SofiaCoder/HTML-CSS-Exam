@@ -40,8 +40,17 @@ nav ul li a {
   text-decoration: none;
 }
 
+main {
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1fr 8fr;
+  grid-template-areas: "... header" "nav section" "... section";
+}
+
 section {
   margin-inline: auto;
+  grid-area: section;
 }
 
 /*
@@ -49,28 +58,25 @@ section {
 HOME (& event-cards for allEvents)
 =================================================================
 */
-.home {
-  max-width: 1300px;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 3fr 5fr;
-  grid-template-areas: "... header" "nav home" "... event";
-}
-
-.home-pic {
-  grid-area: home;
-  margin-inline: 10%;
-}
-.home-pic img {
-  max-width: 100%;
-}
-
 .event {
-  grid-area: event;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 1rem;
   margin-inline: 10%;
+  grid-template-areas: "homePic homePic homePic" "cards cards cards" "cards cards cards";
+}
+.event .home-pic {
+  grid-area: homePic;
+}
+.event .home-pic img {
+  max-width: 100%;
+}
+.event .cards {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
 }
 .event-card {
   background-color: #f9d7dd;
@@ -139,16 +145,7 @@ HOME (& event-cards for allEvents)
 ALL EVENTS
 ================================================================
 */
-.events-page {
-  max-width: 1300px;
-  display: grid;
-  grid-template-columns: 0.2fr 1fr;
-  grid-template-rows: 0.2fr 2fr;
-  grid-template-areas: "... header" "nav events" "... events";
-}
-
 .all-events {
-  grid-area: events;
   max-width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -161,16 +158,7 @@ ALL EVENTS
 EVENT X
 =================================================================
 */
-.event-x-page {
-  max-width: 1300px;
-  display: grid;
-  grid-template-columns: 0.2fr 1fr;
-  grid-template-rows: 0.2fr 1fr;
-  grid-template-areas: "... header" "nav eventX" "... eventX";
-}
-
 .event-x {
-  grid-area: eventX;
   margin-bottom: 10rem;
   margin-left: 8rem;
 }
@@ -215,18 +203,6 @@ EVENT X
 ADD EVENT
 =================================================================
 */
-.add-page {
-  max-width: 1300px;
-  display: grid;
-  grid-template-columns: 0.2fr 2fr;
-  grid-template-rows: 0.2fr 1fr;
-  grid-template-areas: "... header" "nav add" "... add";
-}
-
-.add {
-  grid-area: add;
-}
-
 .add-form {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -300,17 +276,6 @@ ADD EVENT
 ABOUT
 =================================================================
 */
-.about-page {
-  max-width: 1300px;
-  display: grid;
-  grid-template-columns: 0.2fr 1fr;
-  grid-template-rows: 0.2fr 2fr;
-  grid-template-areas: "... header" "nav about" "... about";
-}
-
-.about {
-  grid-area: about;
-}
 .about .vd {
   display: grid;
   grid-template-columns: 20% 1fr;
