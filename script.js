@@ -2,9 +2,6 @@ let infoBtns = document.querySelectorAll('.infoBtn');
 let homePage = document.querySelector('.home');
 let aboutSubmit = document.querySelector('#contact-submit');
 let aboutForm = document.querySelector('#about-form');
-//const infoStyle = window.getComputedStyle(element, null);
-
-
 
 function infoFunction (event) {
     const text = event.target.nextElementSibling;
@@ -16,8 +13,6 @@ function infoFunction (event) {
         text.style.display = 'none';
     }
 }
-
-
 
 infoBtns.forEach(btn => {
     btn.addEventListener('click', infoFunction);
