@@ -27,6 +27,8 @@ function submitMessage(event) {
     event.preventDefault();
 }
 
-aboutSubmit.addEventListener('click', submitMessage);
+//Add validation to aviod JS error if button does not exist on page
+if(aboutSubmit != null)
+  aboutSubmit.addEventListener('click', submitMessage);
 
 
