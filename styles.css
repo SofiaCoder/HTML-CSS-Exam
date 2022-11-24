@@ -1,6 +1,6 @@
 body {
   background-color: #fae5e9;
-  color: rgb(110, 110, 110);
+  color: rgb(37, 36, 36);
   font-family: "Nunito", sans-serif;
   font-weight: 400;
 }
@@ -45,7 +45,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 8fr;
   grid-template-rows: 1fr 8fr;
-  grid-template-areas: "... header" "nav section" "... section";
+  grid-template-areas: "... header" "nav section";
 }
 
 section {
@@ -60,22 +60,23 @@ HOME (& event-cards for allEvents)
 */
 .event {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 1rem;
   margin-inline: 10%;
-  grid-template-areas: "homePic homePic homePic" "cards cards cards" "cards cards cards";
+  grid-template-areas: "homePic" "cards";
 }
 .event .home-pic {
   grid-area: homePic;
 }
 .event .home-pic img {
   max-width: 100%;
+  border-radius: 15%;
 }
 .event .cards {
   grid-area: cards;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
 .event-card {
@@ -96,14 +97,13 @@ HOME (& event-cards for allEvents)
   margin-inline: 10px;
 }
 .event-card-text > * {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .event-card-text span {
   font-size: small;
 }
 .event-card-text-name {
-  font-size: larger;
-  text-decoration: underline grey;
+  font-size: 24px;
 }
 .event-card-text .info {
   display: none;
@@ -112,11 +112,12 @@ HOME (& event-cards for allEvents)
   max-width: 100px;
   background-color: #f9d7dd;
   border: 1px solid #ff9daf;
-  margin-top: 8px;
+  margin-top: 15px;
   margin-bottom: 3px;
   transition-duration: 0.4s;
   font-family: "Nunito", sans-serif;
   color: black;
+  cursor: pointer;
 }
 .event-card-text button:hover {
   background-color: #ff9daf;
@@ -129,17 +130,9 @@ HOME (& event-cards for allEvents)
   color: rgb(82, 82, 82);
 }
 .event-card-text a:hover {
-  color: rgb(142, 138, 138);
+  color: rgb(122, 109, 109);
 }
 
-@media (max-width: 1000px) {
-  .home {
-    grid-template-rows: 0.2fr 1fr 3fr;
-  }
-  .event {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 /*
 ================================================================
 ALL EVENTS
@@ -148,7 +141,7 @@ ALL EVENTS
 .all-events {
   max-width: 80%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
   margin-inline: auto;
 }
@@ -179,6 +172,13 @@ EVENT X
 }
 .event-x-text span {
   font-size: small;
+}
+.event-x-text details, .event-x-text summary {
+  margin: 0.5rem;
+  padding: 5px;
+  font-size: large;
+  font-weight: 500;
+  cursor: pointer;
 }
 .event-x-text .info {
   font-style: italic;
