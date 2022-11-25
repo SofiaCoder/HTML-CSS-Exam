@@ -252,14 +252,14 @@ ADD EVENT
         "submit submit";
 
     & input, 
-    select { 
-        margin: 0.5rem 1rem 0 0;
+    select, textarea { 
+        margin: 1rem 1rem 0 0;
     }
     & label {
         text-align: left;
         width: 10rem;
         font-weight: 800;
-        margin: 0.5rem 1rem 0 0;
+        margin: 1rem 1rem 0 0;
     }
     & #name-label {
         grid-area: nameLabel;
@@ -280,15 +280,12 @@ ADD EVENT
     }
     & #description {
         grid-area: descriptInput;
-        height: 5rem;
-        vertical-align: top;
     }
     & #agenda-label {
         grid-area: agendaLabel;
     }
     & #agenda {
         grid-area: agendaInput;
-        height: 5rem;
     }
     & #photos-label {
         grid-area: photosLabel;
@@ -312,6 +309,7 @@ ADD EVENT
         height: 3rem;
         margin-inline: auto;
     }
+    
 }
 
 /*

@@ -33,10 +33,10 @@
             <input type="date" id="date">
 
             <label id="description-label" for="description">Short description:</label>
-            <input type="textarea" id="description" placeholder="Short description of the event...">
+            <textarea id="description" placeholder="Short description of the event..."></textarea>
 
             <label id="agenda-label" for="agenda">Agenda:</label>
-            <input type="textarea" id="agenda" placeholder="The events agenda...">
+            <textarea id="agenda" placeholder="The events agenda..."></textarea>
 
             <label id="photos-label" type="photos">Photos:</label>
             <div id="photos-div">
@@ -48,6 +48,7 @@
 
             <label id="category-label" for="category">Category:</label>
             <select id="category">
+                <option value="" disabled selected>Choose...</option>
                 <option value="fun">Fun</option>
                 <option value="education">Education</option>
                 <option value="workout">Workout</option>
