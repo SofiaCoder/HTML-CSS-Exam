@@ -9,7 +9,10 @@ header {
   grid-area: header;
   font-size: 38px;
   font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -44,13 +47,18 @@ main {
   max-width: 1300px;
   display: grid;
   grid-template-columns: 1fr 8fr;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: 1fr 5fr;
   grid-template-areas: "... header" "nav section";
 }
 
 section {
   margin-inline: auto;
   grid-area: section;
+}
+
+.heading {
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 /*
@@ -83,6 +91,7 @@ HOME (& event-cards for allEvents)
   background-color: #f9d7dd;
   display: flex;
   flex-direction: column;
+  padding-bottom: 2rem;
 }
 .event-card:hover {
   background-color: #fdc6d0;
@@ -208,7 +217,7 @@ ADD EVENT
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
   background-color: #fdc6d0;
-  padding: 5rem;
+  padding: 5rem 8rem;
   grid-template-areas: "nameLabel nameInput" "dateLabel dateInput" "descriptLabel descriptInput" "agendaLabel agendaInput" "photosLabel photosDiv" "categoryLabel categoryInput" "submit submit";
 }
 .add-form input,
@@ -219,6 +228,7 @@ ADD EVENT
   text-align: left;
   width: 10rem;
   font-weight: 800;
+  margin: 0.5rem 1rem 0 0;
 }
 .add-form #name-label {
   grid-area: nameLabel;
@@ -240,6 +250,7 @@ ADD EVENT
 .add-form #description {
   grid-area: descriptInput;
   height: 5rem;
+  vertical-align: top;
 }
 .add-form #agenda-label {
   grid-area: agendaLabel;
