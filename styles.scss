@@ -254,6 +254,8 @@ ADD EVENT
     & input, 
     select, textarea { 
         margin: 1rem 1rem 0 0;
+        &::placeholder {
+            font-family: 'Nunito', sans-serif;
     }
     & label {
         text-align: left;
@@ -280,6 +282,7 @@ ADD EVENT
     }
     & #description {
         grid-area: descriptInput;
+        }
     }
     & #agenda-label {
         grid-area: agendaLabel;
@@ -359,6 +362,12 @@ ABOUT
             "labelMail inputMail"
             "labelMsg inputMsg"
             "........ submit";
+        
+        & input, textarea {
+            &::placeholder {
+                font-family: 'Nunito', sans-serif;
+        }
+        }
 
         &-name-label {
             grid-area: labelName;

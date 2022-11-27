@@ -99,8 +99,7 @@ HOME (& event-cards for allEvents)
 .event-card img {
   width: 100%;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   align-self: center;
 }
 .event-card-text {
@@ -200,8 +199,7 @@ EVENT X
 .event-x-pics img {
   width: 150px;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 5px;
   transition: transform 0.5s;
 }
@@ -226,30 +224,41 @@ ADD EVENT
 .add-form select, .add-form textarea {
   margin: 1rem 1rem 0 0;
 }
-.add-form label {
+.add-form input::placeholder,
+.add-form select::placeholder, .add-form textarea::placeholder {
+  font-family: "Nunito", sans-serif;
+}
+.add-form input label,
+.add-form select label, .add-form textarea label {
   text-align: left;
   width: 10rem;
   font-weight: 800;
   margin: 1rem 1rem 0 0;
 }
-.add-form #name-label {
+.add-form input #name-label,
+.add-form select #name-label, .add-form textarea #name-label {
   grid-area: nameLabel;
 }
-.add-form #name {
+.add-form input #name,
+.add-form select #name, .add-form textarea #name {
   grid-area: nameInput;
   height: 1.5rem;
 }
-.add-form #date-label {
+.add-form input #date-label,
+.add-form select #date-label, .add-form textarea #date-label {
   grid-area: dateLabel;
 }
-.add-form #date {
+.add-form input #date,
+.add-form select #date, .add-form textarea #date {
   grid-area: dateInput;
   height: 1.5rem;
 }
-.add-form #description-label {
+.add-form input #description-label,
+.add-form select #description-label, .add-form textarea #description-label {
   grid-area: descriptLabel;
 }
-.add-form #description {
+.add-form input #description,
+.add-form select #description, .add-form textarea #description {
   grid-area: descriptInput;
 }
 .add-form #agenda-label {
@@ -317,6 +326,9 @@ ABOUT
   grid-template-rows: 1fr 1fr 1.8fr 1fr;
   grid-template-areas: "labelName inputName" "labelMail inputMail" "labelMsg inputMsg" "........ submit";
 }
+.about #contact input::placeholder, .about #contact textarea::placeholder {
+  font-family: "Nunito", sans-serif;
+}
 .about #contact-name-label {
   grid-area: labelName;
 }
@@ -369,4 +381,6 @@ ABOUT
   height: 13rem;
   width: 20rem;
   align-self: center;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
